@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: storage-service-config
+  namespace: lissa-fit
+data:
+  DB_URL: "jdbc:postgresql://wa-timescaledb:5432/wa_storage_service"
+  SPRING_LIQUIBASE_DEFAULT_SCHEMA: "wa_storage_service_db"
+  KAFKA_BOOTSTRAP_SERVERS: "wa-kafka:9092"
+  KAFKA_RETRY_INTERVAL_MS: "1000"
+  KAFKA_MAX_RETRIES: "3"
+  REDIS_HOST: "wa-redis"
+  REDIS_PORT: "6379"
+  REDIS_TIMEOUT: "5s"
+  SPRING_KAFKA_PROPERTIES_SPRING_JSON_USE_TYPE_HEADERS: "false"
+  SPRING_KAFKA_PROPERTIES_SPRING_JSON_VALUE_DEFAULT_TYPE: "org.wa.storage.service.dto.HealthMetricDto"
+  SPRING_KAFKA_PROPERTIES_SPRING_JSON_TRUSTED_PACKAGES: "*"
